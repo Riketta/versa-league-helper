@@ -1,12 +1,14 @@
-use crate::message::{Message, MessageInvocationType, Role};
+use crate::{
+    message::{Message, MessageInvocationType, Role},
+    TTS,
+};
 use chrono::{DateTime, Local, TimeDelta, TimeZone};
 use rand::{rngs::ThreadRng, seq::IteratorRandom};
 use std::{cell::RefCell, thread};
-use tts::Tts;
 
 pub struct GameSession<'a> {
     rng: RefCell<ThreadRng>,
-    tts: &'a mut Tts,
+    tts: &'a mut TTS,
 
     message_interval: TimeDelta,
     started_at: DateTime<Local>,
@@ -18,7 +20,7 @@ pub struct GameSession<'a> {
 
 impl<'a> GameSession<'a> {
     pub fn new(
-        tts: &'a mut Tts,
+        tts: &'a mut TTS,
         messages: &'a Vec<Message>,
         message_interval: i64,
         player_role: Role,
@@ -121,7 +123,7 @@ impl<'a> GameSession<'a> {
     }
 
     fn play_message(&mut self, message: &str) {
-        self.tts.speak(message, false).unwrap();
+        self.tts.play_message(message);
     }
 }
 
@@ -134,7 +136,7 @@ mod tests {
 
     #[test]
     fn test_game_session() -> Result<()> {
-        let mut tts = Tts::default()?;
+        let mut tts = TTS::default();
         let messages = vec![
             Message::new(
                 Role::all(),
