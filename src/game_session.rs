@@ -75,16 +75,15 @@ impl<'a> GameSession<'a> {
                     message_iter.next().unwrap()
                 }
             };
-            message_history.push(message.clone());
 
             self.last_message_at = Local::now();
-
             println!(
                 "Session duration: {}; Playing: [{:?}].",
                 self.duration(),
                 message,
             );
             self.play_message(&message.text);
+            message_history.push(message);
         }
     }
 
