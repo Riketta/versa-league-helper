@@ -7,10 +7,12 @@ use tts::Tts;
 pub struct GameSession<'a> {
     rng: RefCell<ThreadRng>,
     tts: &'a mut Tts,
-    messages: &'a Vec<Message>,
+
+    message_interval: TimeDelta,
     started_at: DateTime<Local>,
     last_message_at: DateTime<Local>,
-    message_interval: TimeDelta,
+
+    messages: &'a Vec<Message>,
     player_role: Role,
 }
 
@@ -24,10 +26,12 @@ impl<'a> GameSession<'a> {
         Self {
             rng: RefCell::new(rand::thread_rng()),
             tts,
-            messages,
+
+            message_interval: TimeDelta::new(message_interval, 0).unwrap(),
             started_at: Local::now(),
             last_message_at: Local.timestamp_opt(0, 0).unwrap(),
-            message_interval: TimeDelta::new(message_interval, 0).unwrap(),
+
+            messages,
             player_role,
         }
     }
