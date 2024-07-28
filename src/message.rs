@@ -97,6 +97,11 @@ impl Message {
                 "Think about the options available to the enemy jungler.".to_string(),
                 MessageInvocationType::Interval(GameStage::Early.to_interval()),
             ),
+            Message::new(
+                vec![Role::Jungle],
+                "Play with the winning side.".to_string(),
+                MessageInvocationType::Interval(GameStage::Early.to_interval()),
+            ),
             // Mid and Late Game.
             Message::new(
                 Role::all(),
