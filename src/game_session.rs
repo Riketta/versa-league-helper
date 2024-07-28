@@ -48,6 +48,7 @@ impl<'a> GameSession<'a> {
             // New messages available, update message pool.
             if messages_count != new_messages.len() {
                 // TODO: improve validation - there is a chance that message pools will be different even though they are the same size.
+                // Count the number of different intervals or something like that.
                 println!(
                     "[!] Initial message pool: {}; Fresh message pool: {}.",
                     messages_count,
