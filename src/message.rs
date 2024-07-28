@@ -23,8 +23,8 @@ impl Role {
 
 #[derive(Clone, Debug, PartialEq)]
 pub struct Message {
-    pub roles: Vec<Role>,
     pub text: String,
+    pub roles: Vec<Role>,
     pub invocation_type: MessageInvocationType,
 }
 
