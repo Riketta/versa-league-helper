@@ -110,7 +110,7 @@ impl Message {
             ),
             Message::new(
                 vec![Role::Top, Role::Mid, Role::ADC, Role::Support],
-                "Be in sync with your team.".to_string(),
+                "Be in sync with your team, pressure map.".to_string(),
                 MessageInvocationType::Interval(GameStage::MidAndLate.to_interval()),
             ),
             Message::new(
