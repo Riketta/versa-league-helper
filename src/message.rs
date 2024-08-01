@@ -148,6 +148,16 @@ impl Message {
                 "Check what's happening in the mid lane, be ready to cover.".to_string(),
                 MessageInvocationType::Interval(GameStage::MidAndLate.to_interval()),
             ),
+            Message::new(
+                Role::all(),
+                "Press the map even if you have low health or a lot of gold if no one can respond.".to_string(),
+                MessageInvocationType::Interval(GameStage::MidAndLate.to_interval()),
+            ),
+            Message::new(
+                Role::all(),
+                "Do something while enemies dead, even if it's just stealing camps or setting up vision.".to_string(),
+                MessageInvocationType::Interval(GameStage::MidAndLate.to_interval()),
+            ),
         ];
 
         messages
