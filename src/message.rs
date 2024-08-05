@@ -99,6 +99,11 @@ impl Message {
             ),
             Message::new(
                 vec![Role::Jungle],
+                "Track level 6 timers on both teammates and enemies.".to_string(),
+                MessageInvocationType::Interval(GameStage::Early.to_interval()),
+            ),
+            Message::new(
+                vec![Role::Jungle],
                 "Play with the winning side.".to_string(),
                 MessageInvocationType::Interval(GameStage::Early.to_interval()),
             ),
