@@ -105,7 +105,7 @@ impl Message {
             Message::new(
                 vec![Role::Jungle],
                 "Play with the winning side.".to_string(),
-                MessageInvocationType::Interval(GameStage::Early.to_interval()),
+                MessageInvocationType::Interval(GameStageInterval { start_timestamp: 91, end_timestamp: 600 }),
             ),
             // Mid and Late Game.
             Message::new(
