@@ -165,7 +165,7 @@ impl Message {
             ),
             Message::new(
                 Role::all(),
-                "Press the map even if you have low health or a lot of gold if no one can respond.".to_string(),
+                "Pressure the map even if you have low health or a lot of gold if no one can respond.".to_string(),
                 MessageInvocationType::Interval(GameStage::MidAndLate.to_interval()),
             ),
             Message::new(
