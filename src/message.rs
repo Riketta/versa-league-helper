@@ -115,6 +115,11 @@ impl Message {
             // Mid and Late Game.
             Message::new(
                 Role::all(),
+                "Mid and late game macro is an extended laning phase.".to_string(),
+                MessageInvocationType::Interval(GameStage::MidAndLate.to_interval()),
+            ),
+            Message::new(
+                Role::all(),
                 "Play for the towers.".to_string(),
                 MessageInvocationType::Interval(GameStage::MidAndLate.to_interval()),
             ),
