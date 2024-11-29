@@ -71,6 +71,11 @@ impl Message {
                 "Numbers advantage is the key.".to_string(),
                 MessageInvocationType::Always,
             ),
+            Message::new(
+                Role::all(),
+                "You only need to take risks when absolutely need to. Often, it is OKAY to do nothing.".to_string(),
+                MessageInvocationType::Always,
+            ),
             // Early Game.
             Message::new(
                 vec![Role::Jungle],
